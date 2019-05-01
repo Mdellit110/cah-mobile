@@ -1,12 +1,27 @@
 .App {
-  width: 100vw;
-  height: 100vh;
+  margin: 0 auto;
   background-color: grey;
   display: flex;
 }
-.deck {
-  width: 10%;
-  height: 10%;
+
+.card {
+  width: 219px;
+  height: 250px;
+  perspective: 1000px;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.card p {
+  margin: 0;
+  padding: 11%;
+  height: 0;
+}
+.card.white {
+  border-bottom: 1px solid black;
+}
+.card.black {
+  border-bottom: 1px solid white;
 }
 .white {
   background-color: white;
@@ -15,4 +30,26 @@
 .black {
   background-color: black;
   color: white;
+}
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+.back {
+  transform: rotateY(180deg);
+}
+.card.up {
+  transform: rotateY(180deg);
+}
+.deck {
+  width: 12%;
+  height: 20%;
+  background-color: grey;
 }
