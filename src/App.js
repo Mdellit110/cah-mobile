@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { fetchWhite, fetchBlack, getBlacks, getWhites } from "./services/axios";
-
+import Deck from "./Components/Deck";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -10,6 +10,7 @@ class App extends Component {
       blacks: []
     };
   }
+
   async componentDidMount() {
     const whites = await getWhites(50);
     const blacks = await getBlacks(5);
@@ -20,7 +21,12 @@ class App extends Component {
   }
 
   render() {
-    return <div className="App" />;
+    return (
+      <div className="App">
+        <Deck color="white" deck={this.state.whites} />
+        <Deck color="black" deck={this.state.blacks} />
+      </div>
+    );
   }
 }
 

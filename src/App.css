@@ -1,0 +1,18 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+  display: flex;
+}
+.deck {
+  width: 10%;
+  height: 10%;
+}
+.white {
+  background-color: white;
+  color: black;
+}
+.black {
+  background-color: black;
+  color: white;
+}
