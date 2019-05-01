@@ -24,7 +24,7 @@ class Card extends Component {
     return (
       <div
         onClick={() => this.flipCard(card)}
-        className={`card ${color} ${active}`}
+        className={`card ${color} ${active} flipper`}
       >
         <div className="back">
           <p>Cards Against Humanity</p>

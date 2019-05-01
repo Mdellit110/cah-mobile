@@ -1,14 +1,24 @@
 .App {
-  margin: 0 auto;
+  height: 100vh;
+  margin: auto;
   background-color: grey;
   display: flex;
+  justify-content: space-around;
+  overflow: auto;
 }
-
-.card {
+.deck {
   width: 219px;
   height: 250px;
+  background-color: grey;
+}
+.card {
   perspective: 1000px;
-  transition: 0.6s;
+  width: 219px;
+  height: 250px;
+  margin: 10px;
+}
+.flipper {
+  transition: 1s;
   transform-style: preserve-3d;
   position: relative;
 }
@@ -17,19 +27,19 @@
   padding: 11%;
   height: 0;
 }
-.card.white {
+.card.white .front, .card.white .back{
   border-bottom: 1px solid black;
-}
-.card.black {
-  border-bottom: 1px solid white;
-}
-.white {
   background-color: white;
   color: black;
+  width: 219px;
+  height: 250px;
 }
-.black {
+.card.black .front, .card.black .back{
+  border-bottom: 1px solid white;
   background-color: black;
   color: white;
+  width: 219px;
+  height: 250px;
 }
 .front,
 .back {
@@ -38,18 +48,12 @@
   top: 0;
   left: 0;
 }
-.front {
-  z-index: 2;
+.back {
   transform: rotateY(0deg);
 }
-.back {
+.front {
   transform: rotateY(180deg);
 }
-.card.up {
+.card.up{
   transform: rotateY(180deg);
-}
-.deck {
-  width: 12%;
-  height: 20%;
-  background-color: grey;
 }
