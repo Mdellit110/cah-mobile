@@ -8,15 +8,30 @@ class Card extends Component {
     };
   }
   flipCard(card) {
+    const { color } = this.state;
     const { active } = this.state;
-    active === "down"
-      ? this.setState({
-          active: "up"
-        })
-      : this.setState({
-          active: "down"
-        });
-  }
+    color === "black"
+      ? active === "down"
+        ? this.setState({
+            active: "up"
+          })
+        :
+          this.setState({
+            active: "down"
+          })
+      : active === "down"
+        ? this.setState({
+            active: "in-hand"
+          })
+        : active === "in-hand"
+          ? this.setState({
+              active: "up"
+            })
+          :
+            this.setState({
+              active: "down"
+            })
+    }
 
   render() {
     const { color, card } = this.props;

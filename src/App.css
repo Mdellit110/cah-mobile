@@ -12,15 +12,14 @@
   background-color: grey;
 }
 .card {
+  position: absolute;
   perspective: 1000px;
   width: 219px;
   height: 250px;
-  margin: 10px;
 }
 .flipper {
   transition: 1s;
   transform-style: preserve-3d;
-  position: relative;
 }
 .card p {
   margin: 0;
@@ -28,14 +27,12 @@
   height: 0;
 }
 .card.white .front, .card.white .back{
-  border-bottom: 1px solid black;
   background-color: white;
   color: black;
   width: 219px;
   height: 250px;
 }
 .card.black .front, .card.black .back{
-  border-bottom: 1px solid white;
   background-color: black;
   color: white;
   width: 219px;
@@ -54,6 +51,12 @@
 .front {
   transform: rotateY(180deg);
 }
-.card.up{
-  transform: rotateY(180deg);
+.card.black.up{
+  transform: translateY(400px) rotateZ(180deg) rotateX(180deg);
+}
+.card.white.in-hand{
+  transform: translateY(400px);
+}
+.card.white.up{
+  transform: translateY(400px) rotateY(180deg);
 }
